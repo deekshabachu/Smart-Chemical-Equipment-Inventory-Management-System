@@ -1,0 +1,18 @@
+body{
+    background:#f5f7fa;
+    font-family:'Segoe UI',sans-serif;
+}
+
+.nav-link{
+    border-radius:8px;
+    padding:12px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    background:#0d6efd;
+}
+
+.bg-dark{
+    background:#1e293b!important;
+}

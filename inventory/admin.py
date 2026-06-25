@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Lab, Chemical, Equipment, LabSettings, Alert
+from .models import Lab, Chemical, Equipment, LabSettings, Alert, UserProfile
 from .utils import apply_scaling_for_lab, create_chemical_alert, create_equipment_alert
 
 
@@ -40,3 +40,7 @@ class LabSettingsAdmin(admin.ModelAdmin):
 @admin.register(Alert)
 class AlertAdmin(admin.ModelAdmin):
     list_display = ("alert_type", "message", "lab", "created_at")
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ("user", "lab")

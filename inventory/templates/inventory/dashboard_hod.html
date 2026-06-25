@@ -1,0 +1,142 @@
+{% extends "inventory/base_dashboard.html" %}
+
+{% block title %}
+HOD Dashboard
+{% endblock %}
+
+{% block dashboard_content %}
+
+<h2 class="mb-1">Welcome, HOD 👋</h2>
+<p class="text-muted">
+    Manage laboratories, inventory, alerts and student intake.
+</p>
+
+<!-- Summary Cards -->
+
+<div class="row mt-4">
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Total Chemicals</h6>
+                <h2>{{ chemical_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Equipment</h6>
+                <h2>{{ equipment_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Active Alerts</h6>
+                <h2 class="text-danger">{{ alert_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h6 class="text-muted">Labs</h6>
+                <h2>{{ lab_count }}</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Recent Alerts -->
+
+<div class="card shadow-sm border-0 mt-4">
+
+    <div class="card-header bg-white">
+        <h5 class="mb-0">Recent Alerts</h5>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+
+                <tr>
+                    <th>Alert</th>
+                    <th>Lab</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Hydrochloric Acid below minimum threshold</td>
+                    <td>Lab A</td>
+                    <td>
+                        <span class="badge bg-danger">Critical</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Microscope under maintenance</td>
+                    <td>Lab B</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Ethanol nearing expiry</td>
+                    <td>Lab A</td>
+                    <td>
+                        <span class="badge bg-info">Review</span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- Quick Actions -->
+
+<div class="card shadow-sm border-0 mt-4">
+
+    <div class="card-header bg-white">
+        <h5 class="mb-0">Quick Actions</h5>
+    </div>
+
+    <div class="card-body">
+
+        <a href="#" class="btn btn-primary me-2 mb-2">
+            Manage Chemicals
+        </a>
+
+        <a href="#" class="btn btn-success me-2 mb-2">
+            Manage Equipment
+        </a>
+
+        <a href="#" class="btn btn-warning me-2 mb-2">
+            View Alerts
+        </a>
+
+        <a href="#" class="btn btn-secondary mb-2">
+            Analytics
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
